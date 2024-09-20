@@ -1,0 +1,217 @@
+@import url(var.css);
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    background:var(--color_txt2);
+    gap: 50px;
+}
+#header-img{
+    position: absolute;
+    width: 100%;
+    opacity: 0.8;
+}
+.header__container{
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+} 
+.header__content{
+    background:var(--color_txt2);
+    width: 100%;
+    text-align: center; 
+}
+.main_navbar{
+    background:var(--color_txt2);
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 25px 25px 25px 25px;
+}
+.navbar__block1{
+    width: 10%;
+    z-index: 1;
+}
+.navbar__block2{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+.navbar2{
+    list-style-type: none;
+    border: 1px solid  rgba(0,0,0,0.0);
+    background:var(--color_txt2); 
+  }
+.navbar2 a{
+    color: var(--color_txt1);
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Comfortaa';
+    font-size:20px;
+    font-weight: 700; 
+  }
+.navbar2 a:hover{
+    border-radius: 20px 20px;
+    color: var(--color_txt1);
+ }
+.navbar1{
+    font-family: 'Playwrite CU';
+    font-weight: 700;
+    font-size:20px;
+    color: var(--color_txt1);
+    padding: 5px 5px 5px 20px;
+    text-align: left;
+}
+.main__content{
+    position: absolute;
+    top:125px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    flex-direction: column;    
+}
+.main__news,
+.main__categories{
+    position: relative;
+    display:flex;
+    width: 80%;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.news__block1{
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    background-color: var(--color_txt2);
+    gap: 20px;
+}
+.news__block1_elelemt1{
+    position: relative;
+    display:flex;
+    width: 80%;
+    height: 20%;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'Comfortaa';
+    font-weight: 800;
+    font-size: vw;
+}
+.news__block1_elelemt2{
+    position: relative;
+    display:flex;
+    width: 90%;
+    height: 80%;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'Comfortaa';
+    font-weight: 400;
+    font-size: 1.6vw;
+}
+.news__block1_elelemt3{
+    position: relative;
+    display:flex;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#addBtn{
+    background-color: var(--color_txt1);
+    color: var(--color_txt2);
+    padding: 5px 5px 5px 5px;
+    text-decoration: none; 
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 20px 20px;
+}
+h2{
+    background-color: var(--color_txt2);
+    font-family: 'Comfortaa';
+    font-weight: 600;
+    color: var(--color_txt1);
+    font-size: 2.5vw;
+}
+.categories__info{
+    background-color: var(--color_txt2);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 25px;
+    padding: 25px 25px 25px 25px;
+}
+.product-div{
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    width: 250px;
+    margin: 5px;  
+}
+.title-div{
+    padding: 5px;
+    height: 150px;
+}
+.price-div{
+    padding: 5px;
+    height: 50px;
+}
+.card-img{
+    width: 150px;
+    height: 150px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.delete-btn{
+    background-color: brown;
+    height: 25px;
+    color: var(--color_txt2);
+    padding: 5px 5px 5px 5px;
+    text-decoration: none; 
+    font-family: 'Comfortaa';
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: 20px 20px;
+}
+#title,
+#price,
+#description,
+#image,
+#category{
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 5px auto;
+    padding: 5px;
+}
