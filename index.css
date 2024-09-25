@@ -76,6 +76,7 @@ body{
     flex-direction: column;    
 }
 .main__news,
+.filter,
 .main__categories{
     position: relative;
     display:flex;
@@ -163,19 +164,24 @@ h2{
     gap: 20px;
     text-align: center;
 }
-.container{
+
+.posts{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 100%; 
     gap: 25px;
     padding: 25px 25px 25px 25px;
+    gap: 20px;
+    text-align: center;
 }
-.product-div{
+.post-div.post{
+    display: flex;
+    flex-direction: column;
     background: white;
     border-radius: 25px;
     padding: 25px;
     width: 250px;
-    margin: 5px;  
+    margin: 5px; 
 }
 .title-div{
     padding: 5px;
@@ -186,12 +192,8 @@ h2{
     height: 50px;
 }
 .card-img{
-    width: 150px;
-    height: 150px;
-}
-.form{
-    display: flex;
-    flex-direction: column;
+    width: 200px;
+    height: 200px;
 }
 .delete-btn{
     background-color: brown;
@@ -214,4 +216,33 @@ h2{
     right: 0;
     margin: 5px auto;
     padding: 5px;
+}
+.pagination{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+.pagination__list{
+    display: flex;
+    list-style-type: none;
+}
+.pagination__item{
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.pagination__item--active{
+    font-weight: 800;
+    color: blue;
+}
+#filterBtn{
+    background-color: var(--color_txt1);
+    color: var(--color_txt2);
+    width: 25%;
+    padding: 5px 5px 5px 5px;
+    text-decoration: none; 
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 20px 20px;
 }
