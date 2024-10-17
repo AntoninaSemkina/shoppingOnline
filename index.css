@@ -235,7 +235,8 @@ h2{
     font-weight: 800;
     color: blue;
 }
-#filterBtn{
+#filterBtn,
+.filterCatalog{
     background-color: var(--color_txt1);
     color: var(--color_txt2);
     width: 25%;
@@ -245,4 +246,7 @@ h2{
     font-size: 14px;
     font-weight: 800;
     border-radius: 20px 20px;
+}
+.hide {
+    display: none; /* скрывает элемент */
 }

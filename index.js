@@ -30,44 +30,6 @@ addBtn.addEventListener('click',()=>{
         .then(json=>console.log(json))
     
 }) 
-// const render = (products) =>{
-//     products.map(product=>{
-//         const productDiv=document.createElement('div')
-//         productDiv.classList.add('product-div')
-//         //productDiv.innerText = product.id + "|" + product.price + "|" + product.title
-
-//         const titleDiv = document.createElement('div')
-//         titleDiv.classList.add('title-div')
-//         titleDiv.innerText =  product.title
-
-//         const priceDiv = document.createElement('div')
-//         priceDiv.classList.add('price-div')
-//         priceDiv.innerText =  product.price
-
-//         const img= document.createElement('img')
-//         img.classList.add('card-img')
-//         img.src = product.image
-
-//         const deleteBtn = document.createElement('button')
-//         deleteBtn.classList.add('delete-btn')
-//         deleteBtn.innerText = "Удалить"
-//         deleteBtn.onclick= function(){
-//             fetch('https://fakestoreapi.com/products/' + product.id,{
-//                 method:"DELETE"
-//             })
-//                 .then(res=>res.json())
-//                 .then(json=>console.log(json))
-//         }
-//         productDiv.appendChild(img)
-//         productDiv.appendChild(titleDiv)
-//         productDiv.appendChild(priceDiv)
-//         productDiv.appendChild(deleteBtn)
-
-//         container.appendChild(productDiv)
-        
-//     })
-// }
-
 async function getData(){
     const response =  await fetch('https://fakestoreapi.com/products')
     const data = await response.json()
@@ -161,3 +123,57 @@ async function main(){
     displayPagination(postsData,rows);
 }
 main();
+
+
+fetch('https://fakestoreapi.com/products')
+.then( res=> {
+return res.json();
+})
+.then(data => {
+    let set = new Set();
+    data.forEach(product=>{
+        let category =[product.category].toString();
+        console.log(category);
+        set.add(category);
+    })
+    console.log(set)
+    const categoryContainer = document.getElementById('categoryContainer')
+
+    set.forEach(item => {
+        const catItem = document.createElement('button')
+        catItem.innerText = item
+        categoryContainer.appendChild(catItem)
+        catItem.className="filterCatalog";
+        const attribute =document.createAttribute("data-filter");
+        attribute.value="all";
+        catItem.setAttributeNode(attribute);
+    })
+    
+})
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const currentCategory = button.dataset.filter
+// Здесь сработает функция
+filter(currentCategory, cards)
+})
+})
+console.log(currentCategory)
+function filter (category, items) {
+    items.forEach((item) => {
+      // проверка на соответствие категории
+      const isItemFiltered = !item.classList.contains(category)
+      // Заведем переменную для показа всех карточек в категории All
+      const isShowAll = category.toLowerCase() === 'all'
+      // Если карточка не содержит данную категорию
+      if (isItemFiltered && !isShowAll) {
+      // Добавлять класс hide
+          item.classList.add('hide')
+  // В противном случае, удалять класс hide
+      } else {
+          item.classList.remove('hide')
+      }
+    })
+  }
+  
+
+
